@@ -1,9 +1,0 @@
-/Tickting/Api/bin/Debug/netstandard2.0/Api.deps.json
-/Tickting/Api/bin/Debug/netstandard2.0/Api.dll
-/Tickting/Api/bin/Debug/netstandard2.0/Api.pdb
-/Tickting/Api/obj/Debug/netstandard2.0/Api.csprojAssemblyReference.cache
-/Tickting/Api/obj/Debug/netstandard2.0/Api.AssemblyInfoInputs.cache
-/Tickting/Api/obj/Debug/netstandard2.0/Api.AssemblyInfo.cs
-/Tickting/Api/obj/Debug/netstandard2.0/Api.csproj.CoreCompileInputs.cache
-/Tickting/Api/obj/Debug/netstandard2.0/Api.dll
-/Tickting/Api/obj/Debug/netstandard2.0/Api.pdb
