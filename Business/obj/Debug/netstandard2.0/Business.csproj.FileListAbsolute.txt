@@ -1,0 +1,9 @@
+/Tickting/Business/bin/Debug/netstandard2.0/Business.deps.json
+/Tickting/Business/bin/Debug/netstandard2.0/Business.dll
+/Tickting/Business/bin/Debug/netstandard2.0/Business.pdb
+/Tickting/Business/obj/Debug/netstandard2.0/Business.csprojAssemblyReference.cache
+/Tickting/Business/obj/Debug/netstandard2.0/Business.AssemblyInfoInputs.cache
+/Tickting/Business/obj/Debug/netstandard2.0/Business.AssemblyInfo.cs
+/Tickting/Business/obj/Debug/netstandard2.0/Business.csproj.CoreCompileInputs.cache
+/Tickting/Business/obj/Debug/netstandard2.0/Business.dll
+/Tickting/Business/obj/Debug/netstandard2.0/Business.pdb

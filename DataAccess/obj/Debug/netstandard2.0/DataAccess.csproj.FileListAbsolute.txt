@@ -1,0 +1,9 @@
+/Tickting/DataAccess/bin/Debug/netstandard2.0/DataAccess.deps.json
+/Tickting/DataAccess/bin/Debug/netstandard2.0/DataAccess.dll
+/Tickting/DataAccess/bin/Debug/netstandard2.0/DataAccess.pdb
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.csprojAssemblyReference.cache
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.AssemblyInfoInputs.cache
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.AssemblyInfo.cs
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.csproj.CoreCompileInputs.cache
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.dll
+/Tickting/DataAccess/obj/Debug/netstandard2.0/DataAccess.pdb
