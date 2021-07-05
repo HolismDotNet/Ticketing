@@ -3,7 +3,6 @@ using Holism.DataAccess;
 using Holism.Framework;
 using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
-using Holism.Ticketing.Models;
 using System;
 using System.Linq.Expressions;
 
@@ -19,7 +18,7 @@ namespace Holism.Ticketing.Business
 
         protected override void ModifyItemBeforeReturning(TicketView item)
         {
-            item.RelatedItems.TimeAgo = PersianDateTime.GetTimeAgo(item.Date);
+            item.RelatedItems.TimeAgo = "Todo";
             base.ModifyItemBeforeReturning(item);
         }
 

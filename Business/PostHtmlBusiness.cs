@@ -2,7 +2,6 @@
 using Holism.DataAccess;
 using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
-using Microsoft.AspNetCore.Http;
 using System;
 
 namespace Holism.Ticketing.Business

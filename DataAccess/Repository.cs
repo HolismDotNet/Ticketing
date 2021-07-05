@@ -1,16 +1,24 @@
 using Holism.Ticketing.Models;
-using Holism.Ticketing.Models;
 using Holism.DataAccess;
 
 namespace Holism.Ticketing.DataAccess
 {
     public class Repository
     {
+        public static Repository<Ticket> Ticket
+        {
+            get
+            {
+                return new Holism.DataAccess.Repository<Ticket>(new TicketingContext());
+            }
+        }
+
+
         public static Repository<Post> Post
         {
             get
             {
-                return new Holism.DataAccess.Repository<Post>(new Holism.TicketingContext());
+                return new Holism.DataAccess.Repository<Post>(new TicketingContext());
             }
         }
 

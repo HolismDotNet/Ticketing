@@ -5,8 +5,8 @@ using Holism.Ticketing.Models;
 
 namespace Holism.Ticketing.Api.Controllers
 {
-    public class PostController : ReadController<Post>
+    public class PostController : ReadController<PostView>
     {
-        public override ReadBusiness<Post> ReadBusiness => new PostBusiness();
+        public override ReadBusiness<PostView> ReadBusiness => new PostBusiness();
     }
 }
