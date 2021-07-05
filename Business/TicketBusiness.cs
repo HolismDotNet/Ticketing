@@ -1,9 +1,9 @@
 ﻿using Holism.Business;
-using Holism.EntityFramework;
+using Holism.DataAccess;
 using Holism.Framework;
 using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.DataAccess.Models;
-using Holism.Ticketing.DataAccess.Models.Views;
+using Holism.Ticketing.Models;
+using Holism.Ticketing.Models;
 using System;
 using System.Linq.Expressions;
 
@@ -11,9 +11,9 @@ namespace Holism.Ticketing.Business
 {
     public class TicketBusiness : Business<TicketView, Ticket>
     {
-        protected override Repository<Ticket> ModelRepository => RepositoryFactory.Ticket;
+        protected override Repository<Ticket> WriteRepository => Repository.Ticket;
 
-        protected override ViewRepository<TicketView> ViewRepository => RepositoryFactory.TicketView;
+        protected override ReadRepository<TicketView> ReadRepository => Repository.TicketView;
 
         protected override Expression<Func<TicketView, object>> DefaultDescendingSortProperty => i => i.Id;
 
@@ -35,14 +35,14 @@ namespace Holism.Ticketing.Business
 
         public void CloseTicket(long ticketId)
         {
-            var ticket = RepositoryFactory.Ticket.Get(ticketId);
+            var ticket = Repository.Ticket.Get(ticketId);
             ticket.StateId = (int)State.Closed;
             Update(ticket);
         }
 
         public void SetState(long ticketId, State state)
         {
-            var ticket = ModelRepository.Get(ticketId);
+            var ticket = WriteRepository.Get(ticketId);
             ticket.StateId = (int)state;
             Update(ticket);
         }

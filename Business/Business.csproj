@@ -1,7 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="/HolismDotNet/Framework/DotNet.targets" />
+
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Holism.Ticketing.Business</AssemblyName>
+    <RootNamespace>Holism.Ticketing.Business</RootNamespace>
   </PropertyGroup>
 
+  <Import Project="/HolismDotNet/Framework/Business.targets" />
+  <Import Project="/HolismDotNet/Framework/Reusable.targets" />
 </Project>

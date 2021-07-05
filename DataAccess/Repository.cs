@@ -1,5 +1,5 @@
 using Holism.Ticketing.Models;
-using Holism.Ticketing.Models.Views;
+using Holism.Ticketing.Models;
 using Holism.DataAccess;
 namespace Holism.Ticketing.DataAccess
 {

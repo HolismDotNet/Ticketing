@@ -1,6 +1,6 @@
 using System;
 
-namespace Holism.Ticketing.Models.Views
+namespace Holism.Ticketing.Models
 {
     public class PostView : Holism.Models.IEntity
     {

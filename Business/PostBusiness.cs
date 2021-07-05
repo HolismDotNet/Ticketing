@@ -1,9 +1,9 @@
 ﻿using Holism.Business;
-using Holism.EntityFramework;
+using Holism.DataAccess;
 using Holism.Framework;
 using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.DataAccess.Models;
-using Holism.Ticketing.DataAccess.Models.Views;
+using Holism.Ticketing.Models;
+using Holism.Ticketing.Models;
 using Microsoft.VisualBasic;
 using MoreLinq;
 using System;
@@ -15,9 +15,9 @@ namespace Holism.Ticketing.Business
 {
     public class PostBusiness : Business<PostView, Post>
     {
-        protected override Repository<Post> ModelRepository => RepositoryFactory.Post;
+        protected override Repository<Post> WriteRepository => Repository.Post;
 
-        protected override ViewRepository<PostView> ViewRepository => RepositoryFactory.PostView;
+        protected override ReadRepository<PostView> ReadRepository => Repository.PostView;
 
         protected override Expression<Func<PostView, object>> DefaultDescendingSortProperty => i => i.Id;
 
