@@ -8,21 +8,21 @@ using System.Linq.Expressions;
 
 namespace Holism.Ticketing.Business
 {
-    public class TicketBusiness : Business<TicketView, Ticket>
+    public class TicketBusiness : Business<Ticket, Ticket>
     {
         protected override Repository<Ticket> WriteRepository => Repository.Ticket;
 
-        protected override ReadRepository<TicketView> ReadRepository => Repository.TicketView;
+        protected override ReadRepository<Ticket> ReadRepository => Repository.Ticket;
 
-        protected override Expression<Func<TicketView, object>> DefaultDescendingSortProperty => i => i.Id;
+        protected override Expression<Func<Ticket, object>> DefaultDescendingSortProperty => i => i.Id;
 
-        protected override void ModifyItemBeforeReturning(TicketView item)
+        protected override void ModifyItemBeforeReturning(Ticket item)
         {
             item.RelatedItems.TimeAgo = "Todo";
             base.ModifyItemBeforeReturning(item);
         }
 
-        public TicketView CreateTicket(Ticket ticket, Guid userGuid)
+        public Ticket CreateTicket(Ticket ticket, Guid userGuid)
         {
             ticket.UserGuid = userGuid;
             ticket.Date = DateTime.Now;
