@@ -1,9 +1,9 @@
 ﻿using Holism.Business;
 using Holism.EntityFramework;
 using Holism.Framework;
-using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.DataAccess.Models;
-using Holism.Ticketing.DataAccess.Models.Views;
+using Ticketing.DataAccess;
+using Ticketing.DataAccess.Models;
+using Ticketing.DataAccess.Models.Views;
 using Microsoft.VisualBasic;
 using MoreLinq;
 using System;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Holism.Ticketing.Business
+namespace Ticketing.Business
 {
     public class PostBusiness : Business<PostView, Post>
     {

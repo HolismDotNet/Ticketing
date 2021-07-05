@@ -1,11 +1,11 @@
 ﻿using Holism.Business;
 using Holism.EntityFramework;
-using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.DataAccess.Models;
+using Ticketing.DataAccess;
+using Ticketing.DataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Holism.Ticketing.Business
+namespace Ticketing.Business
 {
     public class PostHtmlHtmlBusiness : Business<PostHtml, PostHtml>
     {

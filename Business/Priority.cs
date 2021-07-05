@@ -1,4 +1,4 @@
-﻿namespace Holism.Ticketing.Business
+﻿namespace Ticketing.Business
 {
     public enum Priority
     {

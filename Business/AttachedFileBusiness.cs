@@ -1,9 +1,9 @@
 ﻿using Holism.Business;
 using Holism.EntityFramework;
-using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.DataAccess.Models;
+using Ticketing.DataAccess;
+using Ticketing.DataAccess.Models;
 
-namespace Holism.Ticketing.Business
+namespace Ticketing.Business
 {
     public class AttachedFileBusiness : Business<AttachedFile, AttachedFile>
     {
