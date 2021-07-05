@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Holism.Ticketing.Business;
+using System;
 
-namespace AdHoc
+namespace Holism.Ticketing.AdHoc
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Holism.Ticketing.Api
     {
         public static void Main(string[] args)
         {
-            Startup.AddControllerSearchAssembly(typeof(Controllers.PageController).Assembly);
+            Startup.AddControllerSearchAssembly(typeof(Controllers.PostController).Assembly);
             Holism.Api.Config.ConfigureEverything();
             Application.Run();
         }

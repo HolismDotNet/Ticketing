@@ -5,9 +5,9 @@ using Holism.Ticketing.Models;
 
 namespace Holism.Ticketing.DataAccess
 {
-    public class Holism.TicketingContext : DatabaseContext
+    public class TicketingContext : DatabaseContext
     {
-        public override string ConnectionStringName => "Holism.TicketingContext";
+        public override string ConnectionStringName => "TicketingContext";
 
         public DbSet<AttachedFile> AttachedFiles { get; set; }
         public DbSet<Post> Posts {get; set;}

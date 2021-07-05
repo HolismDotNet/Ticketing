@@ -1,6 +1,7 @@
 using Holism.Ticketing.Models;
 using Holism.Ticketing.Models;
 using Holism.DataAccess;
+
 namespace Holism.Ticketing.DataAccess
 {
     public class Repository
@@ -17,14 +18,14 @@ namespace Holism.Ticketing.DataAccess
         {
             get
             {
-                return new Holism.DataAccess.Repository<PostHtml>(new Holism.TicketingContext());
+                return new Holism.DataAccess.Repository<PostHtml>(new TicketingContext());
             }
         }
         public static Repository<AttachedFile> AttachedFile
         {
             get
             {
-                return new Holism.DataAccess.Repository<AttachedFile>(new Holism.TicketingContext());
+                return new Holism.DataAccess.Repository<AttachedFile>(new TicketingContext());
             }
         }
         
@@ -32,7 +33,7 @@ namespace Holism.Ticketing.DataAccess
         {
             get
             {
-                return new Holism.DataAccess.Repository<PostView>(new Holism.TicketingContext());
+                return new Holism.DataAccess.Repository<PostView>(new TicketingContext());
             }
         }
         
@@ -40,7 +41,7 @@ namespace Holism.Ticketing.DataAccess
         {
             get
             {
-                return new Holism.DataAccess.Repository<TicketView>(new Holism.TicketingContext());
+                return new Holism.DataAccess.Repository<TicketView>(new TicketingContext());
             }
         }        
     }
