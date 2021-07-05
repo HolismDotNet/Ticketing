@@ -1,6 +1,6 @@
 using System;
 
-namespace Ticketing.Models.Views
+namespace Holism.Ticketing.Models.Views
 {
     public class TicketView : Holism.Models.IEntity
     {

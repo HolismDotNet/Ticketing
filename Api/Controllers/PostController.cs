@@ -1,9 +1,9 @@
 using Holism.Api.Controllers;
 using Holism.Business;
-using Ticketing.Business;
-using Ticketing.Models;
+using Holism.Ticketing.Business;
+using Holism.Ticketing.Models;
 
-namespace Ticketing.Api.Controllers
+namespace Holism.Ticketing.Api.Controllers
 {
     public class PostController : ReadController<Post>
     {

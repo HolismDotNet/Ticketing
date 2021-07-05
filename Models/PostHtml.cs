@@ -1,4 +1,4 @@
-namespace Ticketing.Models
+namespace Holism.Ticketing.Models
 {
     public class PostHtml : Holism.Models.IEntity
     {

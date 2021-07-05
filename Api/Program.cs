@@ -1,6 +1,6 @@
 using Holism.Api;
 
-namespace Ticketing.Api
+namespace Holism.Ticketing.Api
 {
     public class Program
     {

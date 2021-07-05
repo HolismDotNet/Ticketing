@@ -1,6 +1,6 @@
 using System;
 
-namespace Ticketing.Models
+namespace Holism.Ticketing.Models
 {
     public class Ticket : Holism.Models.IEntity
     {

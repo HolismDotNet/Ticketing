@@ -1,13 +1,13 @@
 using Holism.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using Ticketing.Models;
+using Holism.Ticketing.Models;
 
-namespace Ticketing.DataAccess
+namespace Holism.Ticketing.DataAccess
 {
-    public class TicketingContext : DatabaseContext
+    public class Holism.TicketingContext : DatabaseContext
     {
-        public override string ConnectionStringName => "TicketingContext";
+        public override string ConnectionStringName => "Holism.TicketingContext";
 
         public DbSet<AttachedFile> AttachedFiles { get; set; }
         public DbSet<Post> Posts {get; set;}

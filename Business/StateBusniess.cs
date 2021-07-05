@@ -1,7 +1,7 @@
 ﻿using Holism.Business;
-using Ticketing.DataAccess;
+using Holism.Ticketing.DataAccess;
 
-namespace Ticketing.Business
+namespace Holism.Ticketing.Business
 {
     public class StateBusniess : EnumBusiness<State>
     {
