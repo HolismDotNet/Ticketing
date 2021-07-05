@@ -12,15 +12,15 @@ using System.Linq.Expressions;
 
 namespace Holism.Ticketing.Business
 {
-    public class PostBusiness : Business<PostView, Post>
+    public class PostBusiness : Business<Post, Post>
     {
         protected override Repository<Post> WriteRepository => Repository.Post;
 
-        protected override ReadRepository<PostView> ReadRepository => Repository.PostView;
+        protected override ReadRepository<Post> ReadRepository => Repository.Post;
 
-        protected override Expression<Func<PostView, object>> DefaultDescendingSortProperty => i => i.Id;
+        protected override Expression<Func<Post, object>> DefaultDescendingSortProperty => i => i.Id;
 
-        protected override void ModifyItemBeforeReturning(PostView item)
+        protected override void ModifyItemBeforeReturning(Post item)
         {
             item.RelatedItems.TimeAgo = "Todo";
             base.ModifyItemBeforeReturning(item);
@@ -48,7 +48,7 @@ namespace Holism.Ticketing.Business
             new TicketBusiness().SetState(ticketId, State.WaitingForUserResponse);
         }
 
-        public List<PostView> GetAllTicketPost(long ticketId)
+        public List<Post> GetAllTicketPost(long ticketId)
         {
             var ticketPosts = GetList(i => i.TicketId == ticketId);
             ticketPosts = ticketPosts.OrderByDescending(i => i.Date).ToList();

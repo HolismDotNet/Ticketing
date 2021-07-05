@@ -7,11 +7,12 @@ namespace Holism.Ticketing.DataAccess
 {
     public class TicketingContext : DatabaseContext
     {
-        public override string ConnectionStringName => "TicketingContext";
+        public override string ConnectionStringName => "Ticketing";
 
         public DbSet<AttachedFile> AttachedFiles { get; set; }
         public DbSet<Post> Posts {get; set;}
         public DbSet<PostHtml> PostHtmls {get; set;}
+        public DbSet<Ticket> Tickets {get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
