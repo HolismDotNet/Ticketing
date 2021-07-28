@@ -1,4 +1,4 @@
-using Holism.Api.Controllers;
+using Holism.Api;
 using Holism.Business;
 using Holism.Ticketing.Business;
 using Holism.Ticketing.Models;
