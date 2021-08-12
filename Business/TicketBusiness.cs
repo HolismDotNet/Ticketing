@@ -5,6 +5,7 @@ using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
 using System;
 using System.Linq.Expressions;
+using Humanizer;
 
 namespace Holism.Ticketing.Business
 {
@@ -18,7 +19,7 @@ namespace Holism.Ticketing.Business
 
         protected override void ModifyItemBeforeReturning(Ticket item)
         {
-            item.RelatedItems.TimeAgo = "Todo";
+            item.RelatedItems.TimeAgo = DateTime.Now.Subtract(item.Date).Humanize();
             base.ModifyItemBeforeReturning(item);
         }
 
