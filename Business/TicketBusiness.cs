@@ -23,21 +23,20 @@ namespace Holism.Ticketing.Business
             base.ModifyItemBeforeReturning(item);
         }
 
-        public Ticket CreateTicket(Ticket ticket, Guid userGuid)
+        protected override void BeforeCreation(Ticket ticket, object extraParameters = null)
         {
-            ticket.UserGuid = userGuid;
             ticket.Date = DateTime.Now;
             ticket.StateId = (int)State.New;
-            Create(ticket);
+        }
+
+        protected override void PostCreation(Ticket ticket)
+        {
             new PostBusiness().CreateUserResponse(ticket.Id, ticket.RelatedItems);
-            return Get(ticket.Id);
         }
 
         public void CloseTicket(long ticketId)
         {
-            var ticket = Repository.Ticket.Get(ticketId);
-            ticket.StateId = (int)State.Closed;
-            Update(ticket);
+            SetState(ticketId, State.Closed);
         }
 
         public void SetState(long ticketId, State state)
