@@ -5,6 +5,7 @@ using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
 using System;
 using System.Linq.Expressions;
+using Humanizer;
 
 namespace Holism.Ticketing.Business
 {
@@ -18,25 +19,24 @@ namespace Holism.Ticketing.Business
 
         protected override void ModifyItemBeforeReturning(Ticket item)
         {
-            item.RelatedItems.TimeAgo = "Todo";
+            item.RelatedItems.TimeAgo = DateTime.Now.Subtract(item.Date).Humanize();
             base.ModifyItemBeforeReturning(item);
         }
 
-        public Ticket CreateTicket(Ticket ticket, Guid userGuid)
+        protected override void BeforeCreation(Ticket ticket, object extraParameters = null)
         {
-            ticket.UserGuid = userGuid;
             ticket.Date = DateTime.Now;
             ticket.StateId = (int)State.New;
-            Create(ticket);
+        }
+
+        protected override void PostCreation(Ticket ticket)
+        {
             new PostBusiness().CreateUserResponse(ticket.Id, ticket.RelatedItems);
-            return Get(ticket.Id);
         }
 
         public void CloseTicket(long ticketId)
         {
-            var ticket = Repository.Ticket.Get(ticketId);
-            ticket.StateId = (int)State.Closed;
-            Update(ticket);
+            SetState(ticketId, State.Closed);
         }
 
         public void SetState(long ticketId, State state)

@@ -17,17 +17,11 @@ namespace Holism.Ticketing.Models
 
         public DateTime Date { get; set; }
 
-        public string PersianDate { get; set; }
-
         public Guid? CategoryGuid { get; set; }
 
         public long PriorityId { get; set; }
 
         public long StateId { get; set; }
-
-        public string StatePersianName { get; set; }
-
-        public string PriorityPersianName { get; set; }
 
         public DateTime? LatestPostDate { get; set; }
 

@@ -21,8 +21,6 @@ namespace Holism.Ticketing.Models
 
         public DateTime Date { get; set; }
 
-        public string PersianDate { get; private set; }
-
         public long StateId { get; set; }
 
         public dynamic RelatedItems { get; set; }
