@@ -4,14 +4,16 @@ using Holism.Ticketing.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Holism.Ticketing.DataAccess.Migrations
 {
     [DbContext(typeof(TicketingContext))]
-    partial class TicketingContextModelSnapshot : ModelSnapshot
+    [Migration("20210815010534_mig10")]
+    partial class mig10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
