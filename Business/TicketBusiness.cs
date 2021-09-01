@@ -29,7 +29,7 @@ namespace Holism.Ticketing.Business
             ticket.StateId = (int)State.New;
         }
 
-        protected override void PostCreation(Ticket ticket)
+        protected override void PostCreation(Ticket ticket, object extraParameters = null)
         {
             new PostBusiness().CreateUserResponse(ticket.Id, ticket.RelatedItems);
         }
