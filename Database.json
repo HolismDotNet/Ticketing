@@ -1,0 +1,143 @@
+{
+    "name": "Ticketing",
+    "tables": [
+        {
+            "name": "State",
+            "isEnum": true,
+            "values": [
+                {
+                    "key": "New",
+                    "value": "1"
+                },
+                {
+                    "key": "WaitingForBusinessResponse",
+                    "value": "2"
+                },
+                {
+                    "key": "WaitingForUserResponse",
+                    "value": "3"
+                },
+                {
+                    "key": "UnderInvestigation",
+                    "value": "4"
+                },
+                {
+                    "key": "Closed",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "name": "Priority",
+            "isEnum": true,
+            "values": [
+                {
+                    "key": "High",
+                    "value": "1"
+                },
+                {
+                    "key": "Medium",
+                    "value": "2"
+                },
+                {
+                    "key": "Low",
+                    "value": "3"
+                }
+            ]
+        },
+        {
+            "name": "Ticket",
+            "columns": [
+                {
+                    "name": "UserGuid"
+                },
+                {
+                    "name": "Title"
+                },
+                {
+                    "name": "PriorityId"
+                },
+                {
+                    "name": "Date"
+                },
+                {
+                    "name": "StateId"
+                }
+            ]
+        },
+        {
+            "name": "Posts",
+            "columns": [
+                {
+                    "name": "TicketId"
+                },
+                {
+                    "name": "Date"
+                },
+                {
+                    "name": "IsSystemPost",
+                    "sqlType": "bit",
+                    "nullabled": true
+                }
+            ]
+        },
+        {
+            "name": "PostHtmls",
+            "oneToOneWith": "Posts",
+            "columns": [
+                {
+                    "name": "Html",
+                    "sqlType": "nvarchar(max)"
+                }
+            ]
+        },
+        {
+            "name": "AttachedFiles",
+            "columns": [
+                {
+                    "name": "PostId"
+                },
+                {
+                    "name": "FileGuid"
+                },
+                {
+                    "name": "FileExtension"
+                }
+            ]
+        }
+    ],
+    "views": [
+        {
+            "name": "TicketView",
+            "query": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "name": "PostView",
+            "query": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    ]
+}

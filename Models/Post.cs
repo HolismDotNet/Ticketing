@@ -15,8 +15,6 @@ namespace Holism.Ticketing.Models
 
         public DateTime Date { get; set; }
 
-        public string PersianDate { get; private set; }
-
         public bool? IsSystemPost { get; set; }
 
         public dynamic RelatedItems { get; set; }
