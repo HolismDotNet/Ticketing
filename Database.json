@@ -77,7 +77,7 @@
                 {
                     "name": "IsSystemPost",
                     "sqlType": "bit",
-                    "nullabled": true
+                    "nullable": true
                 }
             ]
         },
