@@ -5,52 +5,66 @@ namespace Holism.Ticketing.DataAccess
 {
     public class Repository
     {
+        
+        public static Repository<State> State
+        {
+            get
+            {
+                return new Holism.DataAccess.Repository<State>(new TicketingsContext());
+            }
+        }
+    
+
+
+        public static Repository<Priority> Priority
+        {
+            get
+            {
+                return new Holism.DataAccess.Repository<Priority>(new TicketingsContext());
+            }
+        }
+    
+
+
         public static Repository<Ticket> Ticket
         {
             get
             {
-                return new Holism.DataAccess.Repository<Ticket>(new TicketingContext());
+                return new Holism.DataAccess.Repository<Ticket>(new TicketingsContext());
             }
         }
+    
 
 
         public static Repository<Post> Post
         {
             get
             {
-                return new Holism.DataAccess.Repository<Post>(new TicketingContext());
+                return new Holism.DataAccess.Repository<Post>(new TicketingsContext());
             }
         }
+    
+
 
         public static Repository<PostHtml> PostHtml
         {
             get
             {
-                return new Holism.DataAccess.Repository<PostHtml>(new TicketingContext());
+                return new Holism.DataAccess.Repository<PostHtml>(new TicketingsContext());
             }
         }
+    
+
+
         public static Repository<AttachedFile> AttachedFile
         {
             get
             {
-                return new Holism.DataAccess.Repository<AttachedFile>(new TicketingContext());
+                return new Holism.DataAccess.Repository<AttachedFile>(new TicketingsContext());
             }
         }
-        
-        public static Repository<PostView> PostView
-        {
-            get
-            {
-                return new Holism.DataAccess.Repository<PostView>(new TicketingContext());
-            }
-        }
-        
-        public static Repository<TicketView> TicketView
-        {
-            get
-            {
-                return new Holism.DataAccess.Repository<TicketView>(new TicketingContext());
-            }
-        }        
+    
+
+
     }
 }

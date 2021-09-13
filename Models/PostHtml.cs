@@ -1,4 +1,4 @@
-namespace Holism.Ticketing.Models
+namespace Holism.Ticketing
 {
     public class PostHtml : Holism.Models.IEntity
     {
@@ -7,9 +7,7 @@ namespace Holism.Ticketing.Models
             RelatedItems = new System.Dynamic.ExpandoObject();
         }
 
-        public long Id { get; set; }
-
-        public string Html { get; set; }
+        public object Html { get; set; }
 
         public dynamic RelatedItems { get; set; }
     }

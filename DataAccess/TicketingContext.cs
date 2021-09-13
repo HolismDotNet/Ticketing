@@ -1,26 +1,24 @@
-using Holism.DataAccess;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using Holism.Ticketing.Models;
-
-namespace Holism.Ticketing.DataAccess
-{
-    public class TicketingContext : DatabaseContext
+public class TicketingContext : DatabaseContext 
     {
-        public override string ConnectionStringName => "Ticketing";
+        public override string ConnectionStringName => "Ticketing";   
 
-        public DbSet<AttachedFile> AttachedFiles { get; set; }
-        public DbSet<Post> Posts {get; set;}
-        public DbSet<PostHtml> PostHtmls {get; set;}
-        public DbSet<Ticket> Tickets {get; set;}
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+                         
+        public DbSet<State> States { get; set; } 
+                    
+        public DbSet<Priority> Prioritys { get; set; } 
+                    
+        public DbSet<Ticket> Tickets { get; set; } 
+                    
+        public DbSet<Post> Posts { get; set; } 
+                    
+        public DbSet<PostHtml> PostHtmls { get; set; } 
+                    
+        public DbSet<AttachedFile> AttachedFiles { get; set; } 
+     
+        
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-			modelBuilder.Entity<Post>().Property(i => i.Id).ValueGeneratedNever();
-			modelBuilder.Entity<PostHtml>().Property(i => i.Id).ValueGeneratedNever();
-			modelBuilder.Entity<AttachedFile>().Property(i => i.Id).ValueGeneratedNever();
-			modelBuilder.Entity<Post>().Property(i => i.Date).HasColumnType("datetime");
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(builder);
         }
+        
     }
-}
