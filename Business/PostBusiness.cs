@@ -1,6 +1,6 @@
 ﻿using Holism.Business;
 using Holism.DataAccess;
-using Holism.Framework;
+using Holism.Infra;
 using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
 using Microsoft.VisualBasic;
