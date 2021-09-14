@@ -13,7 +13,7 @@ namespace Holism.Ticketing.Models
 
         public Guid UserGuid { get; set; }
 
-        public object Title { get; set; }
+        public string Title { get; set; }
 
         public long PriorityId { get; set; }
 

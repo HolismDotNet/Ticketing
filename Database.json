@@ -76,7 +76,7 @@
                 },
                 {
                     "name": "IsSystemPost",
-                    "sqlType": "bit",
+                    "type": "boolean",
                     "nullable": true
                 }
             ]

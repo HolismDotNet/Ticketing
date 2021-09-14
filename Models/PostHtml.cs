@@ -9,7 +9,7 @@ namespace Holism.Ticketing.Models
 
         public long Id { get; set; }
 
-        public object Html { get; set; }
+        public string Html { get; set; }
 
         public dynamic RelatedItems { get; set; }
     }

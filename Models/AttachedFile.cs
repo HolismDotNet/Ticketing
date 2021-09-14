@@ -15,7 +15,7 @@ namespace Holism.Ticketing.Models
 
         public Guid FileGuid { get; set; }
 
-        public object FileExtension { get; set; }
+        public string FileExtension { get; set; }
 
         public dynamic RelatedItems { get; set; }
     }
