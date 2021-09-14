@@ -1,10 +1,3 @@
-using Holism.DataAccess;
-using Microsoft.EntityFrameworkCore;
-
-using System.Collections.Generic;
-using HolismDotNet.Ticketing.Models;
-using System.ComponentModel.DataAnnotations.Schema;
-
 public class TicketingContext : DatabaseContext 
     {
         public override string ConnectionStringName => "Ticketing";   
@@ -21,6 +14,8 @@ public class TicketingContext : DatabaseContext
         public DbSet<PostHtml> PostHtmls { get; set; } 
                     
         public DbSet<AttachedFile> AttachedFiles { get; set; } 
+                    
+        public DbSet<Goal> Goals { get; set; } 
      
         
         protected override void OnModelCreating(ModelBuilder builder)

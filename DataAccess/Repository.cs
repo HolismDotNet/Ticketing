@@ -66,5 +66,15 @@ namespace Holism.Ticketing.DataAccess
     
 
 
+        public static Repository<Goal> Goal
+        {
+            get
+            {
+                return new Holism.DataAccess.Repository<Goal>(new TicketingsContext());
+            }
+        }
+    
+
+
     }
 }
