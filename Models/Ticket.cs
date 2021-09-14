@@ -1,6 +1,6 @@
 using System;
 
-namespace Holism.Ticketing
+namespace Holism.Ticketing.Models
 {
     public class Ticket : Holism.Models.IEntity
     {
@@ -8,6 +8,8 @@ namespace Holism.Ticketing
         {
             RelatedItems = new System.Dynamic.ExpandoObject();
         }
+
+        public long Id { get; set; }
 
         public Guid UserGuid { get; set; }
 

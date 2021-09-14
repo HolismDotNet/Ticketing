@@ -2,51 +2,51 @@
     "name": "Ticketing",
     "tables": [
         {
-            "name": "State",
+            "name": "States",
             "isEnum": true,
-            "values": [
+            "enumItems": [
                 {
                     "key": "New",
-                    "value": "1"
+                    "value": 1
                 },
                 {
                     "key": "WaitingForBusinessResponse",
-                    "value": "2"
+                    "value": 2
                 },
                 {
                     "key": "WaitingForUserResponse",
-                    "value": "3"
+                    "value": 3
                 },
                 {
                     "key": "UnderInvestigation",
-                    "value": "4"
+                    "value": 4
                 },
                 {
                     "key": "Closed",
-                    "value": "5"
+                    "value": 5
                 }
             ]
         },
         {
-            "name": "Priority",
+            "name": "Priorities",
             "isEnum": true,
-            "values": [
+            "enumItems": [
                 {
                     "key": "High",
-                    "value": "1"
+                    "value": 1
                 },
                 {
                     "key": "Medium",
-                    "value": "2"
+                    "value": 2
                 },
                 {
                     "key": "Low",
-                    "value": "3"
+                    "value": 3
                 }
             ]
         },
         {
-            "name": "Ticket",
+            "name": "Tickets",
             "columns": [
                 {
                     "name": "UserGuid"
