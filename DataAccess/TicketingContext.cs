@@ -1,3 +1,10 @@
+using Holism.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
+using System.Collections.Generic;
+using HolismDotNet.Ticketing.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class TicketingContext : DatabaseContext 
     {
         public override string ConnectionStringName => "Ticketing";   
