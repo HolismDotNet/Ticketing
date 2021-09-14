@@ -104,17 +104,6 @@
                     "name": "FileExtension"
                 }
             ]
-        },
-        {
-            "name": "Goals",
-            "columns": [
-                {
-                    "name": "UserGuid"
-                },
-                {
-                    "name": "GoalName"
-                }
-            ]
         }
     ],
     "views": [
