@@ -7,6 +7,6 @@ namespace Holism.Ticketing.Models
         WaitingForBusinessResponse = 2,
         WaitingForUserResponse = 3,
         UnderInvestigation = 4,
-        Closed = 5,
+        Closed = 5
     }
 }

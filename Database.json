@@ -77,7 +77,7 @@
                 {
                     "name": "IsSystemPost",
                     "type": "boolean",
-                    "nullable": true
+                    "isNullable": true
                 }
             ]
         },
@@ -87,7 +87,7 @@
             "columns": [
                 {
                     "name": "Html",
-                    "sqlType": "nvarchar(max)"
+                    "type": "longText"
                 }
             ]
         },
@@ -110,33 +110,15 @@
         {
             "name": "TicketView",
             "query": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "select *",
+                "from Tickets"
             ]
         },
         {
             "name": "PostView",
             "query": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "select *",
+                "from Posts"
             ]
         }
     ]
