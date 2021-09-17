@@ -1,37 +1,48 @@
-﻿using Holism.Business;
+﻿using System;
+using System.Linq.Expressions;
+using Holism.Business;
 using Holism.DataAccess;
 using Holism.Infra;
 using Holism.Ticketing.DataAccess;
 using Holism.Ticketing.Models;
-using System;
-using System.Linq.Expressions;
 using Humanizer;
 
 namespace Holism.Ticketing.Business
 {
-    public class TicketBusiness : Business<Ticket, Ticket>
+    public class TicketBusiness : Business<TicketView, Ticket>
     {
-        protected override Repository<Ticket> WriteRepository => Repository.Ticket;
+        protected override Repository<Ticket> WriteRepository =>
+            Repository.Ticket;
 
-        protected override ReadRepository<Ticket> ReadRepository => Repository.Ticket;
+        protected override ReadRepository<TicketView> ReadRepository =>
+            Repository.TicketView;
 
-        protected override Expression<Func<Ticket, object>> DefaultDescendingSortProperty => i => i.Id;
+        protected override Expression<Func<TicketView, object>>
+        DefaultDescendingSortProperty => i => i.LatestPostDate;
 
-        protected override void ModifyItemBeforeReturning(Ticket item)
+        protected override void ModifyItemBeforeReturning(TicketView item)
         {
-            item.RelatedItems.TimeAgo = DateTime.Now.Subtract(item.Date).Humanize();
+            item.RelatedItems.TimeAgo =
+                DateTime.Now.Subtract(item.Date).Humanize();
             base.ModifyItemBeforeReturning(item);
         }
 
-        protected override void BeforeCreation(Ticket ticket, object extraParameters = null)
+        protected override void BeforeCreation(
+            Ticket ticket,
+            object extraParameters = null
+        )
         {
             ticket.Date = DateTime.Now;
-            ticket.StateId = (int)State.New;
+            ticket.StateId = (int) State.New;
         }
 
-        protected override void PostCreation(Ticket ticket, object extraParameters = null)
+        protected override void PostCreation(
+            Ticket ticket,
+            object extraParameters = null
+        )
         {
-            new PostBusiness().CreateUserResponse(ticket.Id, ticket.RelatedItems);
+            new PostBusiness()
+                .CreateUserResponse(ticket.Id, ticket.RelatedItems);
         }
 
         public void CloseTicket(long ticketId)
@@ -42,8 +53,8 @@ namespace Holism.Ticketing.Business
         public void SetState(long ticketId, State state)
         {
             var ticket = WriteRepository.Get(ticketId);
-            ticket.StateId = (int)state;
-            Update(ticket);
+            ticket.StateId = (int) state;
+            Update (ticket);
         }
     }
 }

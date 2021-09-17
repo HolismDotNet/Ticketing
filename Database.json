@@ -113,6 +113,7 @@
                 "select ",
                 "    Tickets.Id,",
                 "    Tickets.UserGuid,",
+                "    Accounts.dbo.UserViews.DisplayValue as [User],",
                 "    Tickets.Title,",
                 "    Tickets.[Date],",
                 "    Tickets.PriorityId,",
@@ -129,7 +130,9 @@
                 "inner join Priorities ",
                 "on  Priorities.Id= Tickets.PriorityId",
                 "inner join States ",
-                "on  States.Id= Tickets.StateId"
+                "on  States.Id= Tickets.StateId",
+                "left join Accounts.dbo.UserViews",
+                "on Tickets.UserGuid = Accounts.dbo.UserViews.[Guid]"
             ]
         }
     ]

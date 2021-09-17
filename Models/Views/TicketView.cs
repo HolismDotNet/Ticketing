@@ -13,6 +13,8 @@ namespace Holism.Ticketing.Models
 
         public Guid UserGuid { get; set; }
 
+        public string User { get; set; }
+
         public string Title { get; set; }
 
         public DateTime Date { get; set; }
