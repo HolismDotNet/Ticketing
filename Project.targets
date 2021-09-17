@@ -14,12 +14,5 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  
-  <ItemGroup>
-    <Content Include="/HolismDotNet/Ticketing/Database.json">
-      <Link>Database\Ticketing.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
 </Project>
