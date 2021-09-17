@@ -40,5 +40,14 @@ namespace Holism.Ticketing.DataAccess
                 >(new TicketingContext());
             }
         }
+
+        public static Repository<TicketView> TicketView
+        {
+            get
+            {
+                return new Holism.DataAccess.Repository<TicketView
+                >(new TicketingContext());
+            }
+        }
     }
 }

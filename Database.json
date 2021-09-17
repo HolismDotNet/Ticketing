@@ -108,17 +108,28 @@
     ],
     "views": [
         {
-            "name": "TicketView",
+            "name": "TicketViews",
             "query": [
-                "select *",
-                "from Tickets"
-            ]
-        },
-        {
-            "name": "PostView",
-            "query": [
-                "select *",
-                "from Posts"
+                "select ",
+                "    Tickets.Id,",
+                "    Tickets.UserGuid,",
+                "    Tickets.Title,",
+                "    Tickets.[Date],",
+                "    Tickets.PriorityId,",
+                "    Priorities.[Key] as PriorityKey,",
+                "    Tickets.StateId,",
+                "    States.[Key] as StateKey,",
+                "    (",
+                "        select top 1 [Date]",
+                "        from Posts ",
+                "        where TicketId = Tickets.Id",
+                "        order by [Date] desc",
+                "    ) as LatestPostDate",
+                "from Tickets ",
+                "inner join Priorities ",
+                "on  Priorities.Id= Tickets.PriorityId",
+                "inner join States ",
+                "on  States.Id= Tickets.StateId"
             ]
         }
     ]

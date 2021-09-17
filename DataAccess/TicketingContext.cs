@@ -17,6 +17,8 @@ namespace Holism.Ticketing.DataAccess
 
         public DbSet<AttachedFile> AttachedFiles { get; set; }
 
+        public DbSet<TicketView> TicketViews { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
