@@ -27,6 +27,13 @@ namespace Holism.Ticketing.Business
             base.ModifyItemBeforeReturning(item);
         }
 
+        public Ticket Create(TicketWithBody ticketWithBody)
+        {
+            var ticket = ticketWithBody.CastTo<Ticket>();
+            ticket.RelatedItems = ticketWithBody.Body;
+            return Create(ticket);
+        }
+
         protected override void BeforeCreation(
             Ticket ticket,
             object extraParameters = null
