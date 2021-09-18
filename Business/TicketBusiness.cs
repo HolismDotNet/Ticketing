@@ -52,16 +52,17 @@ namespace Holism.Ticketing.Business
                 .CreateUserResponse(ticket.Id, ticket.RelatedItems);
         }
 
-        public void CloseTicket(long ticketId)
+        public TicketView CloseTicket(long ticketId)
         {
-            SetState(ticketId, State.Closed);
+            return SetState(ticketId, State.Closed);
         }
 
-        public void SetState(long ticketId, State state)
+        public TicketView SetState(long ticketId, State state)
         {
             var ticket = WriteRepository.Get(ticketId);
             ticket.StateId = (int) state;
             Update (ticket);
+            return Get(ticketId);
         }
     }
 }
