@@ -113,7 +113,7 @@
                 "select ",
                 "    Tickets.Id,",
                 "    Tickets.UserGuid,",
-                "    Accounts.dbo.UserViews.DisplayValue as [User],",
+                "    Accounts.dbo.UserViews.FullName as [User],",
                 "    Tickets.Title,",
                 "    Tickets.[Date],",
                 "    Tickets.PriorityId,",
