@@ -31,7 +31,7 @@ namespace Holism.Ticketing.Business
             var post = new Post();
             post.TicketId = ticketId;
             post.IsSystemPost = false;
-            post.Date = DateTime.Now;
+            post.UtcDate = DateTime.Now.ToUniversalTime();
             Create(post);
             new PostHtmlHtmlBusiness().Create(post.Id, postHtml);
             new TicketBusiness().SetState(ticketId, State.WaitingForBusinessResponse);
@@ -42,7 +42,7 @@ namespace Holism.Ticketing.Business
             var post = new Post();
             post.TicketId = ticketId;
             post.IsSystemPost = true;
-            post.Date = DateTime.Now;
+            post.UtcDate = DateTime.Now.ToUniversalTime();
             Create(post);
             new PostHtmlHtmlBusiness().Create(post.Id, postHtml);
             new TicketBusiness().SetState(ticketId, State.WaitingForUserResponse);
@@ -51,7 +51,7 @@ namespace Holism.Ticketing.Business
         public List<Post> GetAllTicketPost(long ticketId)
         {
             var ticketPosts = GetList(i => i.TicketId == ticketId);
-            ticketPosts = ticketPosts.OrderByDescending(i => i.Date).ToList();
+            ticketPosts = ticketPosts.OrderByDescending(i => i.UtcDate).ToList();
             return ticketPosts;
         }
 

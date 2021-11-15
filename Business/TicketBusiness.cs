@@ -18,12 +18,12 @@ namespace Holism.Ticketing.Business
             Repository.TicketView;
 
         protected override Expression<Func<TicketView, object>>
-        DefaultDescendingSortProperty => i => i.LatestPostDate;
+        DefaultDescendingSortProperty => i => i.LatestPostUtcDate;
 
         protected override void ModifyItemBeforeReturning(TicketView item)
         {
             item.RelatedItems.TimeAgo =
-                DateTime.Now.Subtract(item.Date).Humanize();
+                DateTime.Now.Subtract(item.UtcDate).Humanize();
             base.ModifyItemBeforeReturning(item);
         }
 
@@ -39,7 +39,7 @@ namespace Holism.Ticketing.Business
             object extraParameters = null
         )
         {
-            ticket.Date = DateTime.Now;
+            ticket.UtcDate = DateTime.Now.ToUniversalTime();
             ticket.StateId = (int) State.New;
         }
 
