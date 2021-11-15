@@ -17,7 +17,7 @@ namespace Holism.Ticketing.Models
 
         public string Title { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime UtcDate { get; set; }
 
         public long PriorityId { get; set; }
 
@@ -27,7 +27,7 @@ namespace Holism.Ticketing.Models
 
         public string StateKey { get; set; }
 
-        public DateTime? LatestPostDate { get; set; }
+        public DateTime? LatestPostUtcDate { get; set; }
 
         public dynamic RelatedItems { get; set; }
     }

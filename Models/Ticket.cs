@@ -17,7 +17,7 @@ namespace Holism.Ticketing.Models
 
         public long PriorityId { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime UtcDate { get; set; }
 
         public long StateId { get; set; }
 
