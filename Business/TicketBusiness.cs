@@ -34,7 +34,7 @@ namespace Holism.Ticketing.Business
             return Create(ticket);
         }
 
-        protected override void BeforeCreation(
+        protected override void PreCreation(
             Ticket ticket,
             object extraParameters = null
         )
