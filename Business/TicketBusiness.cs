@@ -64,5 +64,14 @@ namespace Holism.Ticketing.Business
             Update (ticket);
             return Get(ticketId);
         }
+
+        public void EnsureTicketBelongsToUser(long ticketId, Guid userGuid)
+        {
+            var ticket = Get(ticketId);
+            if (ticket.UserGuid != userGuid)
+            {
+                throw new ClientException($"User does not own this ticket");
+            }
+        }
     }
 }
