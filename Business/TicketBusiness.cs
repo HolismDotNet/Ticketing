@@ -24,6 +24,7 @@ namespace Holism.Ticketing.Business
         {
             item.RelatedItems.TimeAgo =
                 DateTime.Now.Subtract(item.UtcDate).Humanize();
+            item.RelatedItems.TitleizedStateKey = item.StateKey.Titleize();
             base.ModifyItemBeforeReturning(item);
         }
 
