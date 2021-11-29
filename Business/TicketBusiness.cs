@@ -74,5 +74,13 @@ namespace Holism.Ticketing.Business
                 throw new ClientException($"User does not own this ticket");
             }
         }
+
+        public TicketWithPosts GetTicketWithPosts(long ticketId)
+        {
+            var ticketWithPosts = new TicketWithPosts();
+            ticketWithPosts.Ticket = Get(ticketId);
+            ticketWithPosts.Posts = new PostBusiness().GetPosts(ticketId);
+            return ticketWithPosts;
+        }
     }
 }

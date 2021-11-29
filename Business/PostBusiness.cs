@@ -48,21 +48,11 @@ namespace Holism.Ticketing.Business
             new TicketBusiness().SetState(ticketId, State.WaitingForUserResponse);
         }
 
-        public List<Post> GetAllTicketPost(long ticketId)
+        public List<Post> GetPosts(long ticketId)
         {
             var ticketPosts = GetList(i => i.TicketId == ticketId);
             ticketPosts = ticketPosts.OrderByDescending(i => i.UtcDate).ToList();
             return ticketPosts;
-        }
-
-        public object GetTicketAndPosts(long ticketId)
-        {
-            var result = new
-            {
-                Ticket = new TicketBusiness().Get(ticketId),
-                Posts = GetAllTicketPost(ticketId)
-            };
-            return result;
         }
     }
 }

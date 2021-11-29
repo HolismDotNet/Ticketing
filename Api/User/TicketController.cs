@@ -32,5 +32,13 @@ namespace Holism.Ticketing.UserApi
             var ticket = new TicketBusiness().CloseTicket(ticketId);
             return ticket;
         }
+
+        [HttpGet]
+        public TicketWithPosts View(long ticketId)
+        {
+            new TicketBusiness().EnsureTicketBelongsToUser(ticketId, UserGuid);
+            var ticketWithPosts = new TicketBusiness().GetTicketWithPosts(ticketId);
+            return ticketWithPosts;
+        }
     }
 }
