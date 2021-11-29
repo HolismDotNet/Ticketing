@@ -52,6 +52,17 @@ namespace Holism.Ticketing.Business
         {
             var ticketPosts = GetList(i => i.TicketId == ticketId);
             ticketPosts = ticketPosts.OrderByDescending(i => i.UtcDate).ToList();
+            var postIds = ticketPosts.Select(i => i.Id).ToList();
+            var postHtmls = new PostHtmlHtmlBusiness().GetList(postIds);
+            foreach (var post in ticketPosts)
+            {
+                var html = postHtmls.SingleOrDefault(i => i.Id == post.Id);
+                post.RelatedItems.Html = "";
+                if (html != null)
+                {
+                    post.RelatedItems.Html = html.Html;
+                }
+            }
             return ticketPosts;
         }
     }
