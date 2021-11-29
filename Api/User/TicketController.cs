@@ -26,6 +26,14 @@ namespace Holism.Ticketing.UserApi
         }
 
         [HttpPost]
+        public IActionResult AddUserResponse(PostWithMessage model)
+        {
+            new TicketBusiness().EnsureTicketBelongsToUser(model.TicketId, UserGuid);
+            new PostBusiness().CreateUserResponse(model.TicketId, model.Message);
+            return OkJson();
+        }
+
+        [HttpPost]
         public TicketView Close(long ticketId)
         {
             new TicketBusiness().EnsureTicketBelongsToUser(ticketId, UserGuid);
