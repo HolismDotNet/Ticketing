@@ -35,19 +35,13 @@ namespace Holism.Ticketing.Business
             return Create(ticket);
         }
 
-        protected override void PreCreation(
-            Ticket ticket,
-            object extraParameters = null
-        )
+        protected override void PreCreation(Ticket ticket)
         {
             ticket.UtcDate = DateTime.Now.ToUniversalTime();
             ticket.StateId = (int) State.New;
         }
 
-        protected override void PostCreation(
-            Ticket ticket,
-            object extraParameters = null
-        )
+        protected override void PostCreation(Ticket ticket)
         {
             new PostBusiness()
                 .CreateUserResponse(ticket.Id, ticket.RelatedItems);
