@@ -1,53 +1,44 @@
-using Holism.Ticketing.Models;
-using Holism.DataAccess;
+namespace Holism.Ticketing.DataAccess;
 
-namespace Holism.Ticketing.DataAccess
+public class Repository
 {
-    public class Repository
+    public static Repository<AttachedFile> AttachedFile
     {
-        public static Repository<Ticket> Ticket
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<Ticket
-                >(new TicketingContext());
-            }
+            return new Repository<AttachedFile>(new TicketingContext());
         }
+    }
 
-        public static Repository<Post> Post
+    public static Repository<PostHtml> PostHtml
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<Post
-                >(new TicketingContext());
-            }
+            return new Repository<PostHtml>(new TicketingContext());
         }
+    }
 
-        public static Repository<PostHtml> PostHtml
+    public static Repository<Post> Post
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<PostHtml
-                >(new TicketingContext());
-            }
+            return new Repository<Post>(new TicketingContext());
         }
+    }
 
-        public static Repository<AttachedFile> AttachedFile
+    public static Repository<Ticket> Ticket
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<AttachedFile
-                >(new TicketingContext());
-            }
+            return new Repository<Ticket>(new TicketingContext());
         }
+    }
 
-        public static Repository<TicketView> TicketView
+    public static Repository<TicketView> TicketView
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<TicketView
-                >(new TicketingContext());
-            }
+            return new Repository<TicketView>(new TicketingContext());
         }
     }
 }

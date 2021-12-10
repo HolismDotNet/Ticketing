@@ -1,22 +1,19 @@
-using System;
+namespace Holism.Ticketing.Models;
 
-namespace Holism.Ticketing.Models
+public class AttachedFile : IEntity
 {
-    public class AttachedFile : Holism.Models.IEntity
+    public AttachedFile()
     {
-        public AttachedFile()
-        {
-            RelatedItems = new System.Dynamic.ExpandoObject();
-        }
-
-        public long Id { get; set; }
-
-        public long PostId { get; set; }
-
-        public Guid FileGuid { get; set; }
-
-        public string FileExtension { get; set; }
-
-        public dynamic RelatedItems { get; set; }
+        RelatedItems = new ExpandoObject();
     }
+
+    public long Id { get; set; }
+
+    public long PostId { get; set; }
+
+    public Guid FileGuid { get; set; }
+
+    public string FileExtension { get; set; }
+
+    public dynamic RelatedItems { get; set; }
 }
