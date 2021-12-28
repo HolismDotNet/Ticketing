@@ -8,7 +8,9 @@ public class Repository
         {
             return new Repository<AttachedFile>(new TicketingContext());
         }
-    }    public static Repository<PostHtml> PostHtml
+    }
+
+    public static Repository<PostHtml> PostHtml
     {
         get
         {
@@ -32,5 +34,11 @@ public class Repository
         }
     }
 
-
+    public static Repository<TicketView> TicketView
+    {
+        get
+        {
+            return new Repository<TicketView>(new TicketingContext());
+        }
+    }
 }

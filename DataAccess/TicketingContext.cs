@@ -12,6 +12,8 @@ public class TicketingContext : DatabaseContext
 
     public DbSet<Ticket> Tickets { get; set; }
 
+    public DbSet<TicketView> TicketViews { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
