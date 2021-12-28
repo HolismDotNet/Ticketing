@@ -1,8 +1,8 @@
 namespace Holism.Ticketing.DataAccess;
 
-public class TicketingContext : DatabaseContext
+public class TicketingContext : MariaDatabaseContext
 {
-    public override string ConnectionStringName => "Ticketing";
+    public override string ConnectionStringName => "MariaTicketing";
 
     public DbSet<AttachedFile> AttachedFiles { get; set; }
 
