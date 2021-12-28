@@ -4,7 +4,7 @@ using Holism.Ticketing.Models;
 
 namespace Holism.Ticketing.Business
 {
-    public class PriorityBusiness : EnumBusiness<Priority>
+    public class PriorityBusiness : MariaEnumBusiness<Priority>
     {
         public override string ConnectionString =>
             Repository.Ticket.ConnectionString;
