@@ -18,7 +18,11 @@ namespace Holism.Ticketing.Business
 
         protected override ReadRepository<Post> ReadRepository => Repository.Post;
 
-        protected override Expression<Func<Post, object>> DefaultDescendingSortProperty => i => i.Id;
+        protected override Func<Sort> DefaultSort => () => new Sort
+        {
+            Property = nameof(Post.Id),
+            Direction = SortDirection.Descending
+        };
 
         protected override void ModifyItemBeforeReturning(Post item)
         {

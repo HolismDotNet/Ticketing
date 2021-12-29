@@ -17,8 +17,11 @@ namespace Holism.Ticketing.Business
         protected override ReadRepository<TicketView> ReadRepository =>
             Repository.TicketView;
 
-        protected override Expression<Func<TicketView, object>>
-        DefaultDescendingSortProperty => i => i.LatestPostUtcDate;
+        protected override Func<Sort> DefaultSort => () => new Sort
+        {
+            Property = nameof(TicketView.LatestPostUtcDate),
+            Direction = SortDirection.Descending
+        };
 
         protected override void ModifyItemBeforeReturning(TicketView item)
         {
