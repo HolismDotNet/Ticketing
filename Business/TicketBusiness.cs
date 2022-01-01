@@ -26,7 +26,7 @@ namespace Holism.Ticketing.Business
         protected override void ModifyItemBeforeReturning(TicketView item)
         {
             item.RelatedItems.TimeAgo =
-                DateTime.Now.Subtract(item.UtcDate).Humanize();
+                UniversalDateTime.Now.Subtract(item.UtcDate).Humanize();
             item.RelatedItems.TitleizedStateKey = item.StateKey.Titleize();
             base.ModifyItemBeforeReturning(item);
         }
@@ -40,7 +40,7 @@ namespace Holism.Ticketing.Business
 
         protected override void PreCreation(Ticket ticket)
         {
-            ticket.UtcDate = DateTime.Now.ToUniversalTime();
+            ticket.UtcDate = UniversalDateTime.Now;
             ticket.StateId = (int) State.New;
         }
 
