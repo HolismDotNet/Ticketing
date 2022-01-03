@@ -1,6 +1,6 @@
 namespace Holism.Ticketing.Models
 {
-    public enum Priority
+    public enum TicketPriority
     {
         Unknwon = 0,
         High = 1,

@@ -3,7 +3,7 @@ using Holism.Ticketing.Models;
 
 namespace Holism.Ticketing.UserApi;
 
-public class TicketingStateController : EnumController<Ticketing.Models.State>
+public class TicketStateController : EnumController<TicketState>
 {
-    public override EnumBusiness<Ticketing.Models.State> EnumBusiness => new Ticketing.Business.StateBusiness();
+    public override EnumBusiness<TicketState> EnumBusiness => new TicketStateBusiness();
 }

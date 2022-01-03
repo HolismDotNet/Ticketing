@@ -1,6 +1,6 @@
 namespace Holism.Ticketing.Models
 {
-    public enum State
+    public enum TicketState
     {
         Unknwon = 0,
         New = 1,

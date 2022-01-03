@@ -2,7 +2,7 @@
     "name": "Ticketing",
     "tables": [
         {
-            "name": "States",
+            "name": "TicketStates",
             "isEnum": true,
             "enumItems": [
                 {
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "name": "Priorities",
+            "name": "TicketPriorities",
             "isEnum": true,
             "enumItems": [
                 {
@@ -117,9 +117,9 @@
                 "    t.Title,",
                 "    t.UtcDate,",
                 "    t.PriorityId,",
-                "    p.`Key` as PriorityKey,",
+                "    tp.`Key` as PriorityKey,",
                 "    t.StateId,",
-                "    s.`Key` as StateKey,",
+                "    ts.`Key` as StateKey,",
                 "    (",
                 "        select UtcDate",
                 "        from Posts",
@@ -128,10 +128,10 @@
                 "        limit 1",
                 "    ) as LatestPostDate",
                 "from Tickets t",
-                "inner join Priorities p",
-                "on t.PriorityId = p.Id",
-                "inner join States s",
-                "on t.StateId = s.Id",
+                "inner join TicketPriorities tp",
+                "on t.PriorityId = tp.Id",
+                "inner join TicketStates ts",
+                "on t.StateId = ts.Id",
                 "left join Accounts.UserViews u",
                 "on t.UserGuid = u.Guid"
             ]
