@@ -41,7 +41,7 @@ namespace Holism.Ticketing.Business
         protected override void PreCreation(Ticket ticket)
         {
             ticket.UtcDate = UniversalDateTime.Now;
-            ticket.StateId = (int) State.New;
+            ticket.StateId = (int)TicketState.New;
         }
 
         protected override void PostCreation(Ticket ticket)
@@ -52,13 +52,13 @@ namespace Holism.Ticketing.Business
 
         public TicketView CloseTicket(long ticketId)
         {
-            return SetState(ticketId, State.Closed);
+            return SetState(ticketId, TicketState.Closed);
         }
 
-        public TicketView SetState(long ticketId, State state)
+        public TicketView SetState(long ticketId, TicketState state)
         {
             var ticket = WriteRepository.Get(ticketId);
-            ticket.StateId = (int) state;
+            ticket.StateId = (int)state;
             Update (ticket);
             return Get(ticketId);
         }
