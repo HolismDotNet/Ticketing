@@ -55,13 +55,13 @@
                     "name": "Title"
                 },
                 {
-                    "name": "PriorityId"
+                    "name": "TicketPriorityId"
                 },
                 {
                     "name": "Date"
                 },
                 {
-                    "name": "StateId"
+                    "name": "TicketStateId"
                 }
             ]
         },
@@ -116,9 +116,9 @@
                 "    u.DisplayName as `User`,",
                 "    t.Title,",
                 "    t.UtcDate,",
-                "    t.PriorityId,",
+                "    t.TicketPriorityId,",
                 "    tp.`Key` as PriorityKey,",
-                "    t.StateId,",
+                "    t.TicketStateId,",
                 "    ts.`Key` as StateKey,",
                 "    (",
                 "        select UtcDate",
