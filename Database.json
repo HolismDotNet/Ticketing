@@ -129,9 +129,9 @@
                 "    ) as LatestPostDate",
                 "from Tickets t",
                 "inner join TicketPriorities tp",
-                "on t.PriorityId = tp.Id",
+                "on t.TicketPriorityId = tp.Id",
                 "inner join TicketStates ts",
-                "on t.StateId = ts.Id",
+                "on t.TicketStateId = ts.Id",
                 "left join Accounts.UserViews u",
                 "on t.UserGuid = u.Guid"
             ]

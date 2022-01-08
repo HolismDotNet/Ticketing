@@ -17,11 +17,11 @@ public class TicketView : IEntity
 
     public DateTime UtcDate { get; set; }
 
-    public long PriorityId { get; set; }
+    public long TicketPriorityId { get; set; }
 
     public string PriorityKey { get; set; }
 
-    public long StateId { get; set; }
+    public long TicketStateId { get; set; }
 
     public string StateKey { get; set; }
 

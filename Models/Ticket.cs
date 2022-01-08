@@ -13,11 +13,11 @@ public class Ticket : IEntity
 
     public string Title { get; set; }
 
-    public long PriorityId { get; set; }
+    public long TicketPriorityId { get; set; }
 
     public DateTime UtcDate { get; set; }
 
-    public long StateId { get; set; }
+    public long TicketStateId { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }
