@@ -82,11 +82,11 @@
             ]
         },
         {
-            "name": "PostHtmls",
+            "name": "PostContents",
             "oneToOneWith": "Posts",
             "columns": [
                 {
-                    "name": "Html",
+                    "name": "Content",
                     "type": "longText"
                 }
             ]

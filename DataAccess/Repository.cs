@@ -10,11 +10,11 @@ public class Repository
         }
     }
 
-    public static Repository<PostHtml> PostHtml
+    public static Repository<PostContent> PostContent
     {
         get
         {
-            return new Repository<PostHtml>(new TicketingContext());
+            return new Repository<PostContent>(new TicketingContext());
         }
     }
 

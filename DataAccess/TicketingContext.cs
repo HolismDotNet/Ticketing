@@ -6,7 +6,7 @@ public class TicketingContext : DatabaseContext
 
     public DbSet<AttachedFile> AttachedFiles { get; set; }
 
-    public DbSet<PostHtml> PostHtmls { get; set; }
+    public DbSet<PostContent> PostContents { get; set; }
 
     public DbSet<Post> Posts { get; set; }
 

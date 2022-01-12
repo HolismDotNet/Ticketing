@@ -30,25 +30,25 @@ namespace Holism.Ticketing.Business
             base.ModifyItemBeforeReturning(item);
         }
 
-        public void CreateUserResponse(long ticketId, string postHtml)
+        public void CreateUserResponse(long ticketId, string postContent)
         {
             var post = new Post();
             post.TicketId = ticketId;
             post.IsSystemPost = false;
             post.UtcDate = UniversalDateTime.Now;
             Create(post);
-            new PostHtmlHtmlBusiness().Create(post.Id, postHtml);
+            new PostContentBusiness().Create(post.Id, postContent);
             new TicketBusiness().SetState(ticketId, TicketState.WaitingForBusinessResponse);
         }
 
-        public void CreateSystemResponse(long ticketId, string postHtml)
+        public void CreateSystemResponse(long ticketId, string postContent)
         {
             var post = new Post();
             post.TicketId = ticketId;
             post.IsSystemPost = true;
             post.UtcDate = UniversalDateTime.Now;
             Create(post);
-            new PostHtmlHtmlBusiness().Create(post.Id, postHtml);
+            new PostContentBusiness().Create(post.Id, postContent);
             new TicketBusiness().SetState(ticketId, TicketState.WaitingForUserResponse);
         }
 
@@ -57,14 +57,14 @@ namespace Holism.Ticketing.Business
             var ticketPosts = GetList(i => i.TicketId == ticketId);
             ticketPosts = ticketPosts.OrderByDescending(i => i.UtcDate).ToList();
             var postIds = ticketPosts.Select(i => i.Id).ToList();
-            var postHtmls = new PostHtmlHtmlBusiness().GetList(postIds);
+            var postContents = new PostContentBusiness().GetList(postIds);
             foreach (var post in ticketPosts)
             {
-                var html = postHtmls.SingleOrDefault(i => i.Id == post.Id);
-                post.RelatedItems.Html = "";
-                if (html != null)
+                var content = postContents.SingleOrDefault(i => i.Id == post.Id);
+                post.RelatedItems.Content = "";
+                if (content != null)
                 {
-                    post.RelatedItems.Html = html.Html;
+                    post.RelatedItems.Content = content.Content;
                 }
             }
             return ticketPosts;
