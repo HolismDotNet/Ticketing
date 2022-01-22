@@ -2,7 +2,7 @@
     "name": "Ticketing",
     "tables": [
         {
-            "name": "TicketStates",
+            "name": "States",
             "isEnum": true,
             "enumItems": [
                 {
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "name": "TicketPriorities",
+            "name": "Priorities",
             "isEnum": true,
             "enumItems": [
                 {
@@ -55,13 +55,13 @@
                     "name": "Title"
                 },
                 {
-                    "name": "TicketPriorityId"
+                    "name": "PriorityId"
                 },
                 {
                     "name": "Date"
                 },
                 {
-                    "name": "TicketStateId"
+                    "name": "StateId"
                 }
             ]
         },
@@ -116,10 +116,10 @@
                 "    u.DisplayName as `User`,",
                 "    t.Title,",
                 "    t.UtcDate,",
-                "    t.TicketPriorityId,",
-                "    tp.`Key` as PriorityKey,",
-                "    t.TicketStateId,",
-                "    ts.`Key` as StateKey,",
+                "    t.PriorityId,",
+                "    p.`Key` as PriorityKey,",
+                "    t.StateId,",
+                "    s.`Key` as StateKey,",
                 "    (",
                 "        select UtcDate",
                 "        from Posts",
@@ -128,10 +128,10 @@
                 "        limit 1",
                 "    ) as LatestPostDate",
                 "from Tickets t",
-                "inner join TicketPriorities tp",
-                "on t.TicketPriorityId = tp.Id",
-                "inner join TicketStates ts",
-                "on t.TicketStateId = ts.Id",
+                "inner join Priorities p",
+                "on t.PriorityId = p.Id",
+                "inner join States s",
+                "on t.StateId = s.Id",
                 "left join Accounts.UserViews u",
                 "on t.UserGuid = u.Guid"
             ]

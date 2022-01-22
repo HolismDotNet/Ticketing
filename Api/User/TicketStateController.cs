@@ -1,9 +1,6 @@
-using Holism.Ticketing.Business;
-using Holism.Ticketing.Models;
+namespace Ticketing;
 
-namespace Holism.Ticketing.UserApi;
-
-public class TicketStateController : EnumController<TicketState>
+public class TicketStateController : EnumController<Ticketing.State>
 {
-    public override EnumBusiness<TicketState> EnumBusiness => new TicketStateBusiness();
+    public override EnumBusiness<Ticketing.State> EnumBusiness => new Ticketing.StateBusiness();
 }

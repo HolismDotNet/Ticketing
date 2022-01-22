@@ -1,4 +1,4 @@
-namespace Holism.Ticketing.Models;
+namespace Ticketing;
 
 public class PostContent : IEntity
 {

@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-using Holism.Ticketing.Models;
+namespace Ticketing;
 
-namespace Holism.Ticketing.Business
+public class TicketWithPosts
 {
-    public class TicketWithPosts
-    {
-        public TicketView Ticket { get; set; }
+    public TicketView Ticket { get; set; }
 
-        public List<Post> Posts { get; set; }
-    }
+    public List<Ticketing.Post> Posts { get; set; }
 }

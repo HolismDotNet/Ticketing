@@ -1,9 +1,6 @@
-using Holism.Ticketing.Models;
+namespace Ticketing;
 
-namespace Holism.Ticketing.Business
+public class PostWithMessage : Ticketing.Post
 {
-    public class PostWithMessage : Post
-    {
-        public string Message { get; set; }
-    }
+    public string Message { get; set; }
 }

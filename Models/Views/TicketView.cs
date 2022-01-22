@@ -1,4 +1,4 @@
-namespace Holism.Ticketing.Models;
+namespace Ticketing;
 
 public class TicketView : IEntity
 {
@@ -17,11 +17,11 @@ public class TicketView : IEntity
 
     public DateTime UtcDate { get; set; }
 
-    public long TicketPriorityId { get; set; }
+    public long PriorityId { get; set; }
 
     public string PriorityKey { get; set; }
 
-    public long TicketStateId { get; set; }
+    public long StateId { get; set; }
 
     public string StateKey { get; set; }
 

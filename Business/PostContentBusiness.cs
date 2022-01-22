@@ -1,23 +1,16 @@
-﻿using Holism.Business;
-using Holism.DataAccess;
-using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.Models;
-using System;
+﻿namespace Ticketing;
 
-namespace Holism.Ticketing.Business
+public class PostContentBusiness : Business<Ticketing.PostContent, Ticketing.PostContent>
 {
-    public class PostContentBusiness : Business<PostContent, PostContent>
+    protected override Repository<Ticketing.PostContent> WriteRepository => Ticketing.Repository.PostContent;
+
+    protected override ReadRepository<Ticketing.PostContent> ReadRepository => Ticketing.Repository.PostContent;
+
+    public void Create(long postId, string content)
     {
-        protected override Repository<PostContent> WriteRepository => Repository.PostContent;
-
-        protected override ReadRepository<PostContent> ReadRepository => Repository.PostContent;
-
-        public void Create(long postId, string content)
-        {
-            var postContent = new PostContent();
-            postContent.Id = postId;
-            postContent.Content = content;
-            Create(postContent);
-        }
+        var postContent = new Ticketing.PostContent();
+        postContent.Id = postId;
+        postContent.Content = content;
+        Create(postContent);
     }
 }

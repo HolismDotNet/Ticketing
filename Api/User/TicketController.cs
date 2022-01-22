@@ -1,7 +1,4 @@
-using Holism.Ticketing.Business;
-using Holism.Ticketing.Models;
-
-namespace Holism.Ticketing.UserApi;
+namespace Ticketing;
 
 public class TicketController : ReadController<TicketView>
 {

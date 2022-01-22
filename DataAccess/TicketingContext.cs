@@ -1,4 +1,4 @@
-namespace Holism.Ticketing.DataAccess;
+namespace Ticketing;
 
 public class TicketingContext : DatabaseContext
 {

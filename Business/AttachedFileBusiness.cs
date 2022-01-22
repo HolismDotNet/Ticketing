@@ -1,15 +1,9 @@
-﻿using Holism.Business;
-using Holism.DataAccess;
-using Holism.Ticketing.DataAccess;
-using Holism.Ticketing.Models;
+﻿namespace Ticketing;
 
-namespace Holism.Ticketing.Business
+public class AttachedFileBusiness : Business<Ticketing.AttachedFile, Ticketing.AttachedFile>
 {
-    public class AttachedFileBusiness : Business<AttachedFile, AttachedFile>
-    {
-        protected override Repository<AttachedFile> WriteRepository => Repository.AttachedFile;
+    protected override Repository<Ticketing.AttachedFile> WriteRepository => Ticketing.Repository.AttachedFile;
 
-        protected override ReadRepository<AttachedFile> ReadRepository => Repository.AttachedFile;
+    protected override ReadRepository<Ticketing.AttachedFile> ReadRepository => Ticketing.Repository.AttachedFile;
 
-    }
 }

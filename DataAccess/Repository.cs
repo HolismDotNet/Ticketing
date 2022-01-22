@@ -1,44 +1,44 @@
-namespace Holism.Ticketing.DataAccess;
+namespace Ticketing;
 
 public class Repository
 {
-    public static Repository<AttachedFile> AttachedFile
+    public static Repository<Ticketing.AttachedFile> AttachedFile
     {
         get
         {
-            return new Repository<AttachedFile>(new TicketingContext());
+            return new Repository<Ticketing.AttachedFile>(new TicketingContext());
         }
     }
 
-    public static Repository<PostContent> PostContent
+    public static Repository<Ticketing.PostContent> PostContent
     {
         get
         {
-            return new Repository<PostContent>(new TicketingContext());
+            return new Repository<Ticketing.PostContent>(new TicketingContext());
         }
     }
 
-    public static Repository<Post> Post
+    public static Repository<Ticketing.Post> Post
     {
         get
         {
-            return new Repository<Post>(new TicketingContext());
+            return new Repository<Ticketing.Post>(new TicketingContext());
         }
     }
 
-    public static Repository<Ticket> Ticket
+    public static Repository<Ticketing.Ticket> Ticket
     {
         get
         {
-            return new Repository<Ticket>(new TicketingContext());
+            return new Repository<Ticketing.Ticket>(new TicketingContext());
         }
     }
 
-    public static Repository<TicketView> TicketView
+    public static Repository<Ticketing.TicketView> TicketView
     {
         get
         {
-            return new Repository<TicketView>(new TicketingContext());
+            return new Repository<Ticketing.TicketView>(new TicketingContext());
         }
     }
 }

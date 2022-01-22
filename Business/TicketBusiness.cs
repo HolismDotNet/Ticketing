@@ -1,14 +1,12 @@
-﻿using Holism.Ticketing.DataAccess;
+﻿namespace Ticketing;
 
-namespace Holism.Ticketing.Business;
-
-public class TicketBusiness : Business<TicketView, Ticket>
+public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
 {
-    protected override Repository<Ticket> WriteRepository =>
-        Repository.Ticket;
+    protected override Repository<Ticketing.Ticket> WriteRepository =>
+        Ticketing.Repository.Ticket;
 
-    protected override ReadRepository<TicketView> ReadRepository =>
-        Repository.TicketView;
+    protected override ReadRepository<Ticketing.TicketView> ReadRepository =>
+        Ticketing.Repository.TicketView;
 
     protected override Func<Sort> DefaultSort => () => new Sort
     {
@@ -16,7 +14,7 @@ public class TicketBusiness : Business<TicketView, Ticket>
         Direction = SortDirection.Descending
     };
 
-    protected override void ModifyItemBeforeReturning(TicketView item)
+    protected override void ModifyItemBeforeReturning(Ticketing.TicketView item)
     {
         item.RelatedItems.TimeAgo =
             UniversalDateTime.Now.Subtract(item.UtcDate).Humanize();
@@ -31,10 +29,10 @@ public class TicketBusiness : Business<TicketView, Ticket>
         return Create(ticket);
     }
 
-    protected override void PreCreation(Ticket ticket)
+    protected override void PreCreation(Ticketing.Ticket ticket)
     {
         ticket.UtcDate = UniversalDateTime.Now;
-        ticket.TicketStateId = (int)TicketState.New;
+        ticket.StateId = (int)Ticketing.State.New;
     }
 
     protected override void PostCreation(Ticket ticket)
@@ -43,15 +41,15 @@ public class TicketBusiness : Business<TicketView, Ticket>
             .CreateUserResponse(ticket.Id, ticket.RelatedItems);
     }
 
-    public TicketView CloseTicket(long ticketId)
+    public Ticketing.TicketView CloseTicket(long ticketId)
     {
-        return SetState(ticketId, TicketState.Closed);
+        return SetState(ticketId, Ticketing.State.Closed);
     }
 
-    public TicketView SetState(long ticketId, TicketState state)
+    public Ticketing.TicketView SetState(long ticketId, Ticketing.State state)
     {
         var ticket = WriteRepository.Get(ticketId);
-        ticket.TicketStateId = (int)state;
+        ticket.StateId = (int)state;
         Update (ticket);
         return Get(ticketId);
     }
@@ -69,7 +67,7 @@ public class TicketBusiness : Business<TicketView, Ticket>
     {
         var ticketWithPosts = new TicketWithPosts();
         ticketWithPosts.Ticket = Get(ticketId);
-        ticketWithPosts.Posts = new PostBusiness().GetPosts(ticketId);
+        ticketWithPosts.Posts = new Ticketing.PostBusiness().GetPosts(ticketId);
         return ticketWithPosts;
     }
 }

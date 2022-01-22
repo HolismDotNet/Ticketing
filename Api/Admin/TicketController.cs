@@ -1,4 +1,4 @@
-namespace Holism.Ticketing.AdminApi;
+namespace Ticketing;
 
 public class TicketController : Controller<TicketView, Ticket>
 {
