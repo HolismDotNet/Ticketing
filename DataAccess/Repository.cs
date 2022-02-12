@@ -2,43 +2,43 @@ namespace Ticketing;
 
 public class Repository
 {
-    public static Repository<Ticketing.AttachedFile> AttachedFile
+    public static Write<Ticketing.AttachedFile> AttachedFile
     {
         get
         {
-            return new Repository<Ticketing.AttachedFile>(new TicketingContext());
+            return new Write<Ticketing.AttachedFile>(new TicketingContext());
         }
     }
 
-    public static Repository<Ticketing.PostContent> PostContent
+    public static Write<Ticketing.PostContent> PostContent
     {
         get
         {
-            return new Repository<Ticketing.PostContent>(new TicketingContext());
+            return new Write<Ticketing.PostContent>(new TicketingContext());
         }
     }
 
-    public static Repository<Ticketing.Post> Post
+    public static Write<Ticketing.Post> Post
     {
         get
         {
-            return new Repository<Ticketing.Post>(new TicketingContext());
+            return new Write<Ticketing.Post>(new TicketingContext());
         }
     }
 
-    public static Repository<Ticketing.Ticket> Ticket
+    public static Write<Ticketing.Ticket> Ticket
     {
         get
         {
-            return new Repository<Ticketing.Ticket>(new TicketingContext());
+            return new Write<Ticketing.Ticket>(new TicketingContext());
         }
     }
 
-    public static Repository<Ticketing.TicketView> TicketView
+    public static Write<Ticketing.TicketView> TicketView
     {
         get
         {
-            return new Repository<Ticketing.TicketView>(new TicketingContext());
+            return new Write<Ticketing.TicketView>(new TicketingContext());
         }
     }
 }

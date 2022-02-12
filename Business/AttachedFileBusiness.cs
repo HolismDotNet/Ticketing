@@ -2,8 +2,8 @@
 
 public class AttachedFileBusiness : Business<Ticketing.AttachedFile, Ticketing.AttachedFile>
 {
-    protected override Repository<Ticketing.AttachedFile> WriteRepository => Ticketing.Repository.AttachedFile;
+    protected override Write<Ticketing.AttachedFile> Write => Ticketing.Repository.AttachedFile;
 
-    protected override ReadRepository<Ticketing.AttachedFile> ReadRepository => Ticketing.Repository.AttachedFile;
+    protected override Read<Ticketing.AttachedFile> Read => Ticketing.Repository.AttachedFile;
 
 }

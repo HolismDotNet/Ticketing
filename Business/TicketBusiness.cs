@@ -2,10 +2,10 @@
 
 public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
 {
-    protected override Repository<Ticketing.Ticket> WriteRepository =>
+    protected override Write<Ticketing.Ticket> Write =>
         Ticketing.Repository.Ticket;
 
-    protected override ReadRepository<Ticketing.TicketView> ReadRepository =>
+    protected override Read<Ticketing.TicketView> Read =>
         Ticketing.Repository.TicketView;
 
     protected override Func<Sort> DefaultSort => () => new Sort
@@ -48,7 +48,7 @@ public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
 
     public Ticketing.TicketView SetState(long ticketId, Ticketing.State state)
     {
-        var ticket = WriteRepository.Get(ticketId);
+        var ticket = Write.Get(ticketId);
         ticket.StateId = (int)state;
         Update (ticket);
         return Get(ticketId);

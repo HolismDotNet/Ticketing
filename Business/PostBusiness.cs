@@ -2,9 +2,9 @@
 
 public class PostBusiness : Business<Ticketing.Post, Ticketing.Post>
 {
-    protected override Repository<Ticketing.Post> WriteRepository => Ticketing.Repository.Post;
+    protected override Write<Ticketing.Post> Write => Ticketing.Repository.Post;
 
-    protected override ReadRepository<Ticketing.Post> ReadRepository => Ticketing.Repository.Post;
+    protected override Read<Ticketing.Post> Read => Ticketing.Repository.Post;
 
     protected override Func<Sort> DefaultSort => () => new Sort
     {
