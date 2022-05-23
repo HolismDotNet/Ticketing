@@ -2,6 +2,8 @@
 
 public class PostBusiness : Business<Ticketing.Post, Ticketing.Post>
 {
+    public override string EntityType => "TicketingPost";
+
     protected override Write<Ticketing.Post> Write => Ticketing.Repository.Post;
 
     protected override Read<Ticketing.Post> Read => Ticketing.Repository.Post;
