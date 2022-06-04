@@ -77,7 +77,7 @@
                 {
                     "name": "IsSystemPost",
                     "type": "boolean",
-                    "isNullable": true
+                    "nullable": true
                 }
             ]
         },
