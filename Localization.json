@@ -4,7 +4,12 @@
         "translations": {
             "High": "زیاد",
             "Medium": "متوسط",
-            "Low": "کم"
+            "Low": "کم",
+            "New": "جدید",
+            "WaitingForBusinessResponse": "در انتظار پاسخ کسب و کار",
+            "WaitingForUserResponse": "در انتظار پاسخ کاربر",
+            "UnderInvestigation": "در حال بررسی",
+            "Closed": "بسته شده"
         }
     }
 ]
