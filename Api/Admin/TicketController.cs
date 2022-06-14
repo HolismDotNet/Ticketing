@@ -19,4 +19,11 @@ public class TicketController : Controller<TicketView, Ticket>
         var ticketWithPosts = new TicketBusiness().GetTicketWithPosts(ticketId);
         return ticketWithPosts;
     }
+
+    [HttpPost]
+    public IActionResult AddUserResponse(PostWithMessage model)
+    {
+        new PostBusiness().CreateSystemResponse(model.TicketId, model.Message);
+        return OkJson();
+    }
 }
