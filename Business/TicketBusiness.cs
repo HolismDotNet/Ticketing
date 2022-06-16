@@ -70,4 +70,10 @@ public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
         ticketWithPosts.Posts = new Ticketing.PostBusiness().GetPosts(ticketId);
         return ticketWithPosts;
     }
+
+    public int GetCount(Guid userGuid)
+    {
+        var count = GetCount(i => i.UserGuid == userGuid);
+        return count;
+    }
 }
