@@ -33,6 +33,7 @@ public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
     {
         ticket.UtcDate = UniversalDateTime.Now;
         ticket.StateId = (int)Ticketing.State.New;
+        ticket.PriorityId = (int)Priority.High;
     }
 
     protected override void PostCreation(Ticket ticket)
