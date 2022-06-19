@@ -40,4 +40,12 @@ public class TicketController : ReadController<TicketView>
         var ticketWithPosts = new TicketBusiness().GetTicketWithPosts(ticketId);
         return ticketWithPosts;
     }
+
+    [HttpPost]
+    public IActionResult CloseTickets(List<long> ids)
+    {
+        new TicketBusiness().EnsureTicketsBelongToUser(ids, UserGuid);
+        new TicketBusiness().CloseTickets(ids);
+        return OkJson();
+    }
 }

@@ -55,12 +55,30 @@ public class TicketBusiness : Business<Ticketing.TicketView, Ticketing.Ticket>
         return Get(ticketId);
     }
 
+    public List<TicketView> CloseTickets(List<long> ticketIds)
+    {
+        foreach (var ticketId in ticketIds)
+        {
+            CloseTicket(ticketId);
+        }
+        return GetList(ticketIds);
+    }
+
     public void EnsureTicketBelongsToUser(long ticketId, Guid userGuid)
     {
         var ticket = Get(ticketId);
         if (ticket.UserGuid != userGuid)
         {
             throw new ClientException($"User does not own this ticket");
+        }
+    }
+
+    public void EnsureTicketsBelongToUser(List<long> ticketIds, Guid userGuid)
+    {
+        var tickets = GetList(ticketIds);
+        if (tickets.Any(i => i.UserGuid != userGuid))
+        {
+            throw new ClientException("At least one ticket does not belong to the user");
         }
     }
 
