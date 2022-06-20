@@ -1,6 +1,6 @@
 namespace Ticketing;
 
-public class PostContent : IEntity
+public class PostContent : IEntity, IClob
 {
     public PostContent()
     {
