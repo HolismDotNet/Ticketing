@@ -11,5 +11,31 @@
             "UnderInvestigation": "در حال بررسی",
             "Closed": "بسته شده"
         }
+    },
+    {
+        "locale": "ar",
+        "translations": {
+            "High": "عالي",
+            "Medium": "متوسط",
+            "Low": "منخفض",
+            "New": "الجديد",
+            "WaitingForBusinessResponse": "في انتظار استجابة الأعمال",
+            "WaitingForUserResponse": "في انتظار رد المستخدم",
+            "UnderInvestigation": "قيد التحقيق",
+            "Closed": "مغلق"
+        }
+    },
+    {
+        "locale": "ru",
+        "translations": {
+            "High": "Высокая",
+            "Medium": "Середина",
+            "Low": "Низкий",
+            "New": "Новый",
+            "WaitingForBusinessResponse": "Ожидание ответа бизнеса",
+            "WaitingForUserResponse": "Ожидание ответа пользователя",
+            "UnderInvestigation": "Под следствием",
+            "Closed": "Закрыто"
+        }
     }
 ]
